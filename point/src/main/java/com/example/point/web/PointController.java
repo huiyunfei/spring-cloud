@@ -1,7 +1,7 @@
 package com.example.point.web;
 
-import com.example.point.model.Point;
-import com.example.point.service.PointService;
+import com.example.pointshare.feign.PointService;
+import com.example.pointshare.model.Point;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +24,7 @@ public class PointController {
     @RequestMapping(value="/sayHi",method= RequestMethod.GET)
     public void sayHi(@RequestParam(value="name") String name){
         log.info("point sayHi in name: {},point: {}",name,point);
+        pointService.sayHi(name);
     }
 
     @RequestMapping(value="/findById/{id}",method= RequestMethod.GET)

@@ -1,6 +1,6 @@
 package com.example.point.dao;
 
-import com.example.point.model.Point;
+import com.example.pointshare.model.Point;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.jdbc.SQL;
 

@@ -1,7 +1,8 @@
 package com.example.order.service.impl;
 
-import com.example.order.feign.PointFeignClient;
 import com.example.order.service.OrderService;
+import com.example.pointshare.feign.PointService;
+import com.example.pointshare.model.Point;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +14,26 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Autowired
-    private PointFeignClient pointFeignClient;
+    private PointService pointService;
 
     @Override
     public void sayHi(String name) {
-        pointFeignClient.sayHi(name);
+        pointService.sayHi(name);
+    }
+
+    @Override
+    public Point findById(String id) {
+        return pointService.findById(id);
+    }
+
+    @Override
+    public Point findByIdAndName(String id, String name) {
+        return pointService.findByIdAndName(id,name);
+    }
+
+    @Override
+    public void update(Point point) {
+        pointService.update(point);
     }
 
 }

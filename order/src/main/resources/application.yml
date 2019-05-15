@@ -28,16 +28,13 @@ spring:
     filters: stat,wall
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
-mybatis:
-  typeAliasesPackage: com.example.order.model
-  mapperLocations: classpath:mapper/*.xml
 
 #日志
 logging:
   level:
     com:
       example:
-        order:
+        pointshare:
           #开启输出feign
           feign:
             PointFeignClient: DEBUG
