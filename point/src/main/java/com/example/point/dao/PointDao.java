@@ -7,7 +7,7 @@ import org.apache.ibatis.jdbc.SQL;
 /**
  * Created by hui.yunfei@qq.com on 2019/5/15
  */
-@Mapper
+//@Mapper
 public interface PointDao {
 
 
