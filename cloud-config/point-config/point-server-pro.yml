@@ -1,3 +1,4 @@
+
 spring:
 #  application:
 #    name: point-server
@@ -21,5 +22,7 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: stat,wall
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-server:
-  port: 8883
+
+config:
+  profile: pro
+
