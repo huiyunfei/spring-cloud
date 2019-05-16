@@ -1,5 +1,4 @@
-server:
-  port: 8881
+
 
 spring:
   cloud:
@@ -8,7 +7,7 @@ spring:
         enabled: true
         serviceId: config-server
       profile: dev
-      label: dev #不写默认是读master
+      label: master #不写默认是读master
 #日志
 logging:
   level:
@@ -17,7 +16,7 @@ logging:
         pointshare:
           #开启输出feign
           feign:
-            PointFeignClient: DEBUG
+            PointService: DEBUG
 
 #开启断路由
 feign:

@@ -6,7 +6,7 @@ spring:
         enabled: true
         serviceId: config-server
       profile: dev
-      label: dev #(我已经在config-server里边设置过读取dev，但是实际测试这里如果不设置的话config-server读取的还是master，不知道是不是个bug)
+      label: master #(我已经在config-server里边设置过读取dev，但是实际测试这里如果不设置的话config-server读取的还是master，不知道是不是个bug)
 #  datasource:
 #    url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8
 #    username: root
