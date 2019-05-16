@@ -1,0 +1,11 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#启动前加载的配置
+spring:
+  profiles:
+    active: dev
+  application:
+    name: order-server

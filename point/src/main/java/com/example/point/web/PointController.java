@@ -18,12 +18,15 @@ public class PointController {
     @Value("${server.port}")
     String point;
 
+    @Value("${local.profile}")
+    String localProfile;
+
     @Autowired
     private PointService pointService;
 
     @RequestMapping(value="/sayHi",method= RequestMethod.GET)
     public void sayHi(@RequestParam(value="name") String name){
-        log.info("point sayHi in name: {},point: {}",name,point);
+        log.info("point sayHi in name: {},point: {},localProfile: {}",name,point,localProfile);
         pointService.sayHi(name);
     }
 

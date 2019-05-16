@@ -1,0 +1,19 @@
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+      profile: pro #读取配置文件pro环境的，对应关系是应用名-profile，这里就是point-server-pro
+      label: dev
+#开启输出sql日志
+logging:
+  level:
+    com:
+      example:
+        point:
+          dao: DEBUG
+
+local:
+  profile: localPro
