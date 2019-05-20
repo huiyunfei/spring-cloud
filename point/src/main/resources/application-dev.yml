@@ -7,27 +7,16 @@ spring:
         serviceId: config-server
       profile: dev
       label: master #(我已经在config-server里边设置过读取dev，但是实际测试这里如果不设置的话config-server读取的还是master，不知道是不是个bug)
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8
-#    username: root
-#    password:
-#    driverClassName: com.mysql.jdbc.Driver
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    initialSize: 5
-#    minIdle: 5
-#    maxActive: 20
-#    maxWait: 60000
-#    timeBetweenEvictionRunsMillis: 60000
-#    minEvictableIdleTimeMillis: 300000
-#    validationQuery: SELECT 1 FROM DUAL
-#    testWhileIdle: true
-#    testOnBorrow: false
-#    testOnReturn: false
-#    poolPreparedStatements: true
-#    maxPoolPreparedStatementPerConnectionSize: 20
-#    filters: stat,wall
-#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-
+  #添加rabbitmq配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: root
+#不加访问刷新服务/bus/refresh会报401
+management:
+  security:
+    enabled: false
 #开启输出sql日志
 logging:
   level:

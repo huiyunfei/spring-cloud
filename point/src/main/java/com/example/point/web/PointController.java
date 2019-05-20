@@ -5,6 +5,7 @@ import com.example.pointshare.model.Point;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/point")
 @Slf4j
+@RefreshScope//不加该注解刷新无效
 public class PointController {
 
     @Value("${server.port}")
@@ -20,13 +22,15 @@ public class PointController {
 
     @Value("${local.profile}")
     String localProfile;
+    @Value("${config.profile}")
+    String configProfile;
 
     @Autowired
     private PointService pointService;
 
     @RequestMapping(value="/sayHi",method= RequestMethod.GET)
     public void sayHi(@RequestParam(value="name") String name){
-        log.info("point sayHi in name: {},point: {},localProfile: {}",name,point,localProfile);
+        log.info("point sayHi in name: {},point: {},localProfile: {},configProfile: {}",name,point,localProfile,configProfile);
         pointService.sayHi(name);
     }
 
