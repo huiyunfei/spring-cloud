@@ -22,4 +22,4 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
 config:
-  profile: dev222
+  profile: dev111
