@@ -1,3 +1,12 @@
 
 server:
   port: 8885
+
+#添加Thymeleaf配置
+thymeleaf:
+  cache: false
+  prefix: classpath:/templates/
+  suffix: .html
+  mode: HTML5
+  encoding: UTF-8
+  content-type: text/html
