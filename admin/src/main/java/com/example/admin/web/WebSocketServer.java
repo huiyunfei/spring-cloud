@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 /**
  * Created by huiyunfei on 2019/5/31.
  */
-@ServerEndpoint("/websocket/{userId}")
+@ServerEndpoint("/websocket/{sid}")
 @Component
 @Slf4j
 public class WebSocketServer {
@@ -26,6 +26,8 @@ public class WebSocketServer {
 
     //接收sid
     private String sid="";
+
+
     /**
      * 连接建立成功调用的方法*/
     @OnOpen
@@ -117,5 +119,7 @@ public class WebSocketServer {
     public static synchronized void subOnlineCount() {
         WebSocketServer.onlineCount--;
     }
-
+    public static CopyOnWriteArraySet<WebSocketServer> getWebSocketSet() {
+        return webSocketSet;
+    }
 }
