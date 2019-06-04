@@ -7,17 +7,6 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 
 /**
- * 开启WebSocket支持
- * Created by huiyunfei on 2019/5/31.
- */
-//@Configuration
-//public class WebSocketConfig {
-//    @Bean
-//    public ServerEndpointExporter serverEndpointExporter() {
-//        return new ServerEndpointExporter();
-//    }
-//}
-/**
  * @Description:
 registerStompEndpoints(StompEndpointRegistry registry)
 configureMessageBroker(MessageBrokerRegistry config)
@@ -38,12 +27,14 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 //    withSockJS()的作用是开启SockJS支持，
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/socket").withSockJS();
+        //注册两个STOMP的endpoint，分别用于广播和点对点
+        registry.addEndpoint("/webServer").withSockJS();
+        registry.addEndpoint("/queueServer").withSockJS();
     }
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        //表示客户端订阅地址的前缀信息，也就是客户端接收服务端消息的地址的前缀信息
-        registry.enableSimpleBroker("/topic");
+        //表示客户端订阅地址的前缀信息，也就是客户端接收服务端消息的地址的前缀信息,topic用来广播，user用来实现p2p
+        registry.enableSimpleBroker("/topic","/user");
         //指服务端接收地址的前缀，意思就是说客户端给服务端发消息的地址的前缀
         registry.setApplicationDestinationPrefixes("/app");
     }

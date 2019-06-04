@@ -12,4 +12,9 @@ public class RestFulServiceImpl implements RestFulService {
     public void insert(String userId) {
         System.out.println("serviceimpl get userId:"+userId);
     }
+
+    @Override
+    public String getMessage() {
+        return "hello";
+    }
 }

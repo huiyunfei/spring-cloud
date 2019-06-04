@@ -6,4 +6,6 @@ package com.example.admin.service;
 public interface RestFulService {
 
     public void insert(String userId);
+
+    String getMessage();
 }
