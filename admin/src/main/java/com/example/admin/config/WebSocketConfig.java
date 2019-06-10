@@ -37,5 +37,6 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
         registry.enableSimpleBroker("/topic","/user");
         //指服务端接收地址的前缀，意思就是说客户端给服务端发消息的地址的前缀
         registry.setApplicationDestinationPrefixes("/app");
+        //registry.setUserDestinationPrefix("/user");这句话表示给指定用户发送一对一的主题前缀是"/user"。
     }
 }

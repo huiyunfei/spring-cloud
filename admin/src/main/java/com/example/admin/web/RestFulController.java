@@ -27,6 +27,7 @@ public class RestFulController {
      * @Date: 2019/6/4
      */
     @MessageMapping("/subscribe")
+    //@SendTo
     public void subscribe(ReceiveMessage rm) {
         System.out.println("服务端接收到广播消息："+rm);
         for(int i =1;i<=5;i++) {
@@ -47,6 +48,7 @@ public class RestFulController {
      * @Date: 2019/6/4
      */
     @MessageMapping("/queue")
+    //@SendToUser
     public void queue(ReceiveMessage rm) {
         System.out.println("服务端接收到点对点消息："+rm);
         for(int i =1;i<=5;i++) {
