@@ -15,7 +15,7 @@
         function connect() {
             var socket = new SockJS("/webServer");
             stompClient = Stomp.over(socket);
-            stompClient.connect({}, function(frame) {
+            stompClient.connect({name:'yunfei'}, function(frame) {
                 setConnected(true);
                 console.log('Connected: ' + frame);
                 stompClient.subscribe('/topic/getResponse', function(response){
