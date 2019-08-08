@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -23,7 +22,7 @@ public class TimeTask {
     public SimpMessagingTemplate template;
     @Autowired
     RestFulService restFulService;
-    @Scheduled(cron = "0/20 * * * * ?")
+    //@Scheduled(cron = "0/20 * * * * ?")
     public void test(){
         System.err.println("*********   定时任务执行   **************");
 //        CopyOnWriteArraySet<WebSocketServer> webSocketSet =

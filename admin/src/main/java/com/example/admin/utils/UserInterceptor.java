@@ -30,6 +30,8 @@ public class UserInterceptor extends ChannelInterceptorAdapter {
                 if (name instanceof LinkedList) {
                     // 设置当前访问器的认证用户
                     accessor.setUser(new User(((LinkedList) name).get(0).toString()));
+                    //accessor.setUser(new User("abc"));
+                    //accessor.getSessionAttributes().put("abc", "123");
                 }
             }
         }

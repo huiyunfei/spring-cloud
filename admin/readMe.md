@@ -37,3 +37,4 @@ public class WebSocketConfig {
 @MessageMapping("/change-notice")//客户端访问服务端的时候config中配置的服务端接收前缀也要加上 例：/app/change-notice
 @SendTo("/topic/notice")//config中配置的订阅前缀记得要加上
 2.4：html页面提供连接websocket信息和提供回调接口信息
+哈哈
