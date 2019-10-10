@@ -13,3 +13,4 @@
 启动文件一定要添加对应的扫描
 @EnableFeignClients(basePackages = "com.example.pointshare.feign")//扫描feign的路径
 @SpringBootApplication(scanBasePackages = {"com.example"})//除了扫描本服务的注解外还要扫描feign项目的注解
+dev
